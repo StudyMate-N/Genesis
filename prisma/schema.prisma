@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id           String    @id @default(cuid())
+  orderNumber  String    @unique @default(cuid())
+  studentName  String
+  studentEmail String
+  school       String
+  courseCode   String
+  courseName   String
+  examType     String
+  examDate     DateTime
+  duration     Int
+  commitment   String
+  topics       String    @db.Text
+  notes        String?   @db.Text
+  files        String    @default("[]") @db.Text
+  status       String    @default("pending")
+  quoteAmount  Float?
+  quoteModules String?   @db.Text
+  quoteNote    String?   @db.Text
+  quoteSentAt  DateTime?
+  paymentLink  String?
+  paidAt       DateTime?
+  activatedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
