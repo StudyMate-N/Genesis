@@ -7,6 +7,25 @@ function genOrderNumber() {
   return `ORD-${Math.floor(1000 + Math.random() * 9000)}`;
 }
 
+/**
+ * Normalize legacy /academic/* payment links to correct routes.
+ * Prevents stale links from being stored or sent in emails.
+ */
+function normalizePaymentLink(link, orderId) {
+  if (!link) return null;
+  // Rewrite any /academic/quote/:id or /academic/pay/:id → /pay/:id
+  const academicQuoteRe = /\/academic\/(?:quote|pay)\/[^/\s]+/;
+  if (academicQuoteRe.test(link)) {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    return `${siteUrl}/pay/${orderId}`;
+  }
+  // Reject any other /academic/ links
+  if (/\/academic\//.test(link)) {
+    return null;
+  }
+  return link;
+}
+
 // GET /api/orders — fetch orders
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
@@ -99,7 +118,7 @@ export async function PATCH(req) {
             quoteAmount: parseFloat(amount),
             quoteModules: JSON.stringify(modules || []),
             quoteNote: note || null,
-            paymentLink: paymentLink || null,
+            paymentLink: normalizePaymentLink(paymentLink, id),
             quoteSentAt: new Date(),
           },
         });
@@ -111,7 +130,7 @@ export async function PATCH(req) {
       case 'setPaymentLink': {
         const updated = await db.order.update({
           where: { id },
-          data: { paymentLink: data.paymentLink },
+          data: { paymentLink: normalizePaymentLink(data.paymentLink, id) },
         });
         return NextResponse.json(updated);
       }

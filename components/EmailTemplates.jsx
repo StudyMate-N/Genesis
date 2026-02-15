@@ -49,7 +49,7 @@ function quoteEmail(d){
       </table>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:8px 0 24px">
-      <a href="https://certiprep.academy/academic/quote/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Accept & Pay →</a>
+      <a href="https://certiprep.academy/pay/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Accept & Pay →</a>
     </td></tr></table>
     <p style="margin:0;font-size:13px;color:#94a3b8;text-align:center">This quote is valid for 48 hours. Questions? Just reply to this email.</p>
   </td></tr>
@@ -96,7 +96,7 @@ function paymentEmail(d){
       </ol>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-      <a href="https://certiprep.academy/academic/dashboard/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Go to Dashboard →</a>
+      <a href="https://certiprep.academy/dashboard/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Go to Dashboard →</a>
     </td></tr></table>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
@@ -131,7 +131,7 @@ function activatedEmail(d){
       <div style="font-size:14px;color:#334155;line-height:1.6">Start with the Study Guide each day to build context, then reinforce with Flashcards and Quiz. Save the Mock Exam for Day ${d.duration}!</div>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-      <a href="https://certiprep.academy/academic/prep/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:#ffffff;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day 1 →</a>
+      <a href="https://certiprep.academy/dashboard/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:#ffffff;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day 1 →</a>
     </td></tr></table>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
@@ -167,7 +167,7 @@ function dailyEmail(d){
       </table>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-      <a href="https://certiprep.academy/academic/prep/${d.orderId}/day/${d.dayNum}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day ${d.dayNum} →</a>
+      <a href="https://certiprep.academy/dashboard/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day ${d.dayNum} →</a>
     </td></tr></table>
     <p style="margin:16px 0 0;font-size:13px;color:#94a3b8;text-align:center">Consistency beats intensity. Even 30 minutes today makes a difference! 💪</p>
   </td></tr>
@@ -204,7 +204,7 @@ function examDayEmail(d){
     <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:20px 24px;margin-bottom:24px">
       <div style="font-size:14px;font-weight:700;color:#0369a1;margin-bottom:8px">📝 Last-Minute Review</div>
       <div style="font-size:14px;color:#334155;line-height:1.6">Your flashcard highlights are still available for a quick 15-minute refresh.</div>
-      <a href="https://certiprep.academy/academic/prep/${d.orderId}" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#0369a1;text-decoration:none">Open Quick Review →</a>
+      <a href="https://certiprep.academy/dashboard/${d.orderId}" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#0369a1;text-decoration:none">Open Quick Review →</a>
     </div>
     <div style="text-align:center;padding:16px 0">
       <p style="margin:0;font-size:20px;font-weight:800;color:#0f172a">You've got this, ${d.student}! 🌟</p>
