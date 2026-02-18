@@ -7,9 +7,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  STUDENT
+  ADMIN
+  EDUCATOR
+}
+
+model User {
+  id            String      @id @default(cuid())
+  email         String      @unique
+  password      String
+  role          Role        @default(STUDENT)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  profile       Profile?
+  orders        Order[]
+  studyPlans    StudyPlan[]
+  quizResults   QuizResult[]
+
+  @@index([email])
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String?
+  avatar      String?
+  bio         String?  @db.Text
+  phoneNumber String?
+  school      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
 model Order {
   id           String    @id @default(cuid())
   orderNumber  String    @unique @default(cuid())
+  userId       String?
+  user         User?     @relation(fields: [userId], references: [id])
   studentName  String
   studentEmail String
   school       String
@@ -32,4 +68,64 @@ model Order {
   activatedAt  DateTime?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([studentEmail])
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  title       String
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  modules     Module[]
+
+  @@index([code])
+}
+
+model Module {
+  id          String      @id @default(cuid())
+  courseId    String
+  course      Course      @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title       String
+  type        String      // e.g., "flashcard", "quiz", "study_guide"
+  content     String      @db.Text
+  order       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  studyPlans  StudyPlan[] @relation("StudyPlanToModule")
+
+  @@index([courseId])
+}
+
+model StudyPlan {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  description String?  @db.Text
+  startDate   DateTime @default(now())
+  endDate     DateTime?
+  status      String   @default("active") // active, completed, archived
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  modules     Module[] @relation("StudyPlanToModule")
+
+  @@index([userId])
+}
+
+model QuizResult {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quizId    String   // Reference to Module ID of type quiz
+  score     Float
+  total     Int
+  answers   String   @db.Text // JSON string of answers
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([quizId])
 }
