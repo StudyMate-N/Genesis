@@ -117,13 +117,13 @@ export default function LandingPage() {
         </div>
         <div className="dn" style={{display:"flex",alignItems:"center",gap:28}}>
           {[["How It Works","how"],["Features","features"],["Pricing","pricing"],["Reviews","reviews"]].map(([l,id])=>(<button key={id} onClick={()=>go(id)} style={{background:"none",border:"none",color:"rgba(255,255,255,.6)",fontSize:13,fontWeight:500,cursor:"pointer",fontFamily:"'DM Sans',sans-serif",transition:"color .15s"}} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color="rgba(255,255,255,.6)"}>{l}</button>))}
-          <a href="/academic/enroll" style={{padding:"10px 24px",borderRadius:10,textDecoration:"none",fontFamily:"'DM Sans',sans-serif",background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,fontSize:13,fontWeight:700,boxShadow:`0 2px 14px ${C.gold}35`}}>Start Preparing</a>
+          <a href="/order" style={{padding:"10px 24px",borderRadius:10,textDecoration:"none",fontFamily:"'DM Sans',sans-serif",background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,fontSize:13,fontWeight:700,boxShadow:`0 2px 14px ${C.gold}35`}}>Start Preparing</a>
         </div>
         <button className="mn" onClick={()=>setMob(!mob)} style={{display:"none",background:"none",border:"none",color:"#e2e8f0",cursor:"pointer"}}><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">{mob?<path d="M18 6L6 18M6 6l12 12"/>:<path d="M3 12h18M3 6h18M3 18h18"/>}</svg></button>
       </nav>
       {mob&&<div style={{position:"fixed",top:66,inset:0,zIndex:99,background:"rgba(42,26,14,.97)",padding:24,display:"flex",flexDirection:"column",gap:4}}>
         {[["How It Works","how"],["Features","features"],["Pricing","pricing"],["Reviews","reviews"],["FAQ","faq"]].map(([l,id])=><button key={id} onClick={()=>go(id)} style={{background:"none",border:"none",color:"#e2e8f0",fontSize:18,fontWeight:500,cursor:"pointer",fontFamily:"inherit",padding:"14px 0",textAlign:"left",borderBottom:"1px solid rgba(255,255,255,.08)"}}>{l}</button>)}
-        <a href="/academic/enroll" style={{marginTop:12,padding:14,borderRadius:12,textDecoration:"none",textAlign:"center",background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,fontSize:16,fontWeight:700,fontFamily:"'DM Sans',sans-serif"}}>Start Preparing</a>
+        <a href="/order" style={{marginTop:12,padding:14,borderRadius:12,textDecoration:"none",textAlign:"center",background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,fontSize:16,fontWeight:700,fontFamily:"'DM Sans',sans-serif"}}>Start Preparing</a>
       </div>}
 
       {/* ═══ HERO ═══ */}
@@ -149,7 +149,7 @@ export default function LandingPage() {
           {/* ═══ THREE SERVICE BUTTONS ═══ */}
           <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap",marginTop:32,animation:"fadeUp .8s ease .35s both"}}>
             {/* Primary CTA — Exam Prep (merged) */}
-            <a href="/academic/enroll" className="svc-btn svc-primary" style={{
+            <a href="/order" className="svc-btn svc-primary" style={{
               padding:"18px 34px",borderRadius:16,textDecoration:"none",
               display:"flex",alignItems:"center",gap:12,
               background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,
@@ -248,7 +248,7 @@ export default function LandingPage() {
               <h3 style={{fontSize:23,fontWeight:700,color:C.dark,marginBottom:8}}>{p.tier}</h3>
               <p style={{fontSize:14,color:C.muted,lineHeight:1.55,marginBottom:22,fontFamily:"'DM Sans',sans-serif"}}>{p.desc}</p>
               <div style={{borderTop:`1px solid ${C.borderL}`,paddingTop:16}}>{p.features.map((f,j)=><div key={j} style={{display:"flex",alignItems:"center",gap:8,padding:"5px 0",fontSize:13.5,color:C.text,fontFamily:"'DM Sans',sans-serif"}}><span style={{color:C.success,fontWeight:700}}>✓</span>{f}</div>)}</div>
-              <a href="/academic/enroll" style={{display:"block",textAlign:"center",marginTop:22,padding:14,borderRadius:12,textDecoration:"none",fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:700,background:p.hl?`linear-gradient(135deg,${C.gold},${C.goldHover})`:C.card,color:p.hl?C.dark:C.text,border:p.hl?"none":`1.5px solid ${C.border}`,boxShadow:p.hl?`0 4px 18px ${C.gold}35`:"none",transition:"all .2s"}} onMouseEnter={e=>e.currentTarget.style.transform="translateY(-1px)"} onMouseLeave={e=>e.currentTarget.style.transform="none"}>Get Custom Quote</a>
+              <a href="/order" style={{display:"block",textAlign:"center",marginTop:22,padding:14,borderRadius:12,textDecoration:"none",fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:700,background:p.hl?`linear-gradient(135deg,${C.gold},${C.goldHover})`:C.card,color:p.hl?C.dark:C.text,border:p.hl?"none":`1.5px solid ${C.border}`,boxShadow:p.hl?`0 4px 18px ${C.gold}35`:"none",transition:"all .2s"}} onMouseEnter={e=>e.currentTarget.style.transform="translateY(-1px)"} onMouseLeave={e=>e.currentTarget.style.transform="none"}>Get Custom Quote</a>
             </div></Reveal>
           ))}
         </div>
@@ -281,7 +281,7 @@ export default function LandingPage() {
           <span style={{fontSize:40,display:"block",marginBottom:18}}>🎯</span>
           <h2 style={{fontSize:"clamp(28px,5vw,44px)",fontWeight:700,color:"#fff",lineHeight:1.12,marginBottom:18}}>Ready to Stop Guessing<br/>and <span style={{color:C.gold}}>Start Preparing</span>?</h2>
           <p style={{fontSize:16,color:"rgba(255,255,255,.45)",lineHeight:1.65,marginBottom:34,fontFamily:"'DM Sans',sans-serif"}}>Tell us about your exam. Custom quote in hours. Start today.</p>
-          <a href="/academic/enroll" style={{display:"inline-flex",alignItems:"center",gap:10,padding:"18px 44px",borderRadius:14,textDecoration:"none",background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,fontSize:18,fontWeight:700,fontFamily:"'DM Sans',sans-serif",boxShadow:`0 8px 40px ${C.gold}40`,transition:"all .3s"}} onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-3px)";e.currentTarget.style.boxShadow=`0 14px 56px ${C.gold}60`}} onMouseLeave={e=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow=`0 8px 40px ${C.gold}40`}}>Build My Study Plan <span style={{fontSize:22}}>→</span></a>
+          <a href="/order" style={{display:"inline-flex",alignItems:"center",gap:10,padding:"18px 44px",borderRadius:14,textDecoration:"none",background:`linear-gradient(135deg,${C.gold},${C.goldHover})`,color:C.dark,fontSize:18,fontWeight:700,fontFamily:"'DM Sans',sans-serif",boxShadow:`0 8px 40px ${C.gold}40`,transition:"all .3s"}} onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-3px)";e.currentTarget.style.boxShadow=`0 14px 56px ${C.gold}60`}} onMouseLeave={e=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow=`0 8px 40px ${C.gold}40`}}>Build My Study Plan <span style={{fontSize:22}}>→</span></a>
           <div style={{display:"flex",justifyContent:"center",gap:20,marginTop:24,flexWrap:"wrap"}}>{["🔒 No payment required","⚡ Quote in 2–4 hours","📚 Personalized for your exam"].map((t,i)=><span key={i} style={{fontSize:12,color:"rgba(255,255,255,.35)",fontWeight:500,fontFamily:"'DM Sans',sans-serif"}}>{t}</span>)}</div>
         </div></Reveal>
       </section>
