@@ -165,7 +165,7 @@ export default function LandingPage() {
             </a>
 
             {/* Private Tutoring */}
-            <a href="/academic/tutoring" className="svc-btn svc-glass" style={{
+            <a href="/order" className="svc-btn svc-glass" style={{
               padding:"18px 28px",borderRadius:16,textDecoration:"none",
               display:"flex",alignItems:"center",gap:12,
               background:"rgba(255,255,255,.07)",border:"1.5px solid rgba(255,255,255,.14)",
@@ -181,7 +181,7 @@ export default function LandingPage() {
             </a>
 
             {/* AI Study Tools */}
-            <a href="/academic/ai-tools" className="svc-btn svc-glass" style={{
+            <a href="/order" className="svc-btn svc-glass" style={{
               padding:"18px 28px",borderRadius:16,textDecoration:"none",
               display:"flex",alignItems:"center",gap:12,
               background:"rgba(255,255,255,.07)",border:"1.5px solid rgba(255,255,255,.14)",
