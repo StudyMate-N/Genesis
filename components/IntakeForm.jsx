@@ -76,7 +76,7 @@ const ALL_UNI_NAMES = UNIVERSITY_DB.map(u => u.name);
 //  A/B TEST CONFIG
 // ══════════════════════════════════════════════════
 const AB = {
-  headline: { A:{ title:"Ace Your Next Exam", sub:"Tell us what you're studying and we'll build your personalized prep plan in under 24 hours." }, B:{ title:"Your Personalized Study Plan Starts Here", sub:"Students who prep with CertiPrep score 23% higher on average. Let's build yours." }, C:{ title:"Stop Stressing, Start Preparing", sub:"Custom study plans built around your exam, your timeline, and your materials." }},
+  headline: { A:{ title:"Ace Your Next Exam", sub:"Tell us what you're studying and we'll build your personalized prep plan in under 24 hours." }, B:{ title:"Your Personalized Study Plan Starts Here", sub:"Students who prep with Veritas Academy score 23% higher on average. Let's build yours." }, C:{ title:"Stop Stressing, Start Preparing", sub:"Custom study plans built around your exam, your timeline, and your materials." }},
   cta: { A:"Get My Study Plan →", B:"Build My Prep Plan — Free Quote", C:"Start Preparing Now →" }
 };
 const ACTIVE = { headline:"A", cta:"A" };
@@ -824,7 +824,7 @@ function Header() {
         <div style={{ width: 36, height: 36, borderRadius: "50%", border: "2.5px solid #ecc94b", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ecc94b" strokeWidth="2.5" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
         </div>
-        <div><div style={{ color: "#fff", fontWeight: 700, fontSize: 18, letterSpacing: "1.5px", lineHeight: 1 }}>CERTIPREP</div><div style={{ color: "#a0aec0", fontSize: 11, marginTop: 1 }}>Academic Exam Prep</div></div>
+        <div><div style={{ color: "#fff", fontWeight: 700, fontSize: 18, letterSpacing: "1.5px", lineHeight: 1 }}>VERITAS ACADEMY</div><div style={{ color: "#a0aec0", fontSize: 11, marginTop: 1 }}>Academic Exam Prep</div></div>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
         {["How It Works", "Pricing"].map(t => <a key={t} href="#" style={{ color: "#e2e8f0", textDecoration: "none", fontSize: 14, fontWeight: 500, transition: "color .15s" }} onMouseEnter={e => e.target.style.color = "#ecc94b"} onMouseLeave={e => e.target.style.color = "#e2e8f0"}>{t}</a>)}

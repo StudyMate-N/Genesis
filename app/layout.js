@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'CertiPrep Academic — Personalized Exam Preparation',
+  title: 'Veritas Academy — Unlocking Your True Potential',
   description: 'Custom study plans tailored to your exact syllabus.',
 };
 export default function RootLayout({ children }) {

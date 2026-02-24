@@ -60,7 +60,7 @@ export default function AdminPanel(){
           <div style={{width:32,height:32,borderRadius:8,background:"linear-gradient(135deg,"+T.accent+","+T.accentHover+")",display:"flex",alignItems:"center",justifyContent:"center"}}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={T.dk?"#1a202c":"#fff"} strokeWidth="2.5" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <span style={{fontWeight:700,fontSize:15,letterSpacing:"1.5px",color:T.text}}>CERTIPREP</span>
+          <span style={{fontWeight:700,fontSize:15,letterSpacing:"1.5px",color:T.text}}>VERITAS ACADEMY</span>
           <span style={{fontSize:11,color:T.dim,fontWeight:500}}>ADMIN</span>
         </div>
         <div style={{display:"flex",alignItems:"center",gap:12}}>

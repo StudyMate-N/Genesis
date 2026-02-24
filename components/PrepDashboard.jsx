@@ -711,7 +711,7 @@ export default function PrepDashboard(){
           <div style={{width:36,height:36,borderRadius:"50%",border:`2.5px solid ${B.gold}`,display:"flex",alignItems:"center",justifyContent:"center"}}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={B.gold} strokeWidth="2.5" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <div><div style={{color:"#fff",fontWeight:700,fontSize:18,letterSpacing:"1.5px",lineHeight:1}}>CERTIPREP</div><div style={{color:B.light,fontSize:11,marginTop:1}}>Academic Exam Prep</div></div>
+          <div><div style={{color:"#fff",fontWeight:700,fontSize:18,letterSpacing:"1.5px",lineHeight:1}}>VERITAS ACADEMY</div><div style={{color:B.light,fontSize:11,marginTop:1}}>Academic Exam Prep</div></div>
         </div>
         <div style={{display:"flex",alignItems:"center",gap:20}}>
           {/* XP bar in header */}

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 /* ═══════════════════════════════════════════
-   CERTIPREP ACADEMIC — EMAIL TEMPLATE PREVIEWER
+   VERITAS ACADEMY ACADEMIC — EMAIL TEMPLATE PREVIEWER
    5 templates · 4 themes · live preview
    ═══════════════════════════════════════════ */
 
@@ -28,7 +28,7 @@ function quoteEmail(d){
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px"><tr><td align="center">
 <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)">
   <tr><td style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:32px 40px;text-align:center">
-    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 CERTIPREP</span></div>
+    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 VERITAS ACADEMY</span></div>
     <h1 style="margin:0;font-size:26px;font-weight:700;color:#ffffff;line-height:1.3">Your Custom Study Plan<br>is Ready!</h1>
     <p style="margin:12px 0 0;font-size:14px;color:#94a3b8">We've reviewed your submission and prepared a quote.</p>
   </td></tr>
@@ -49,12 +49,12 @@ function quoteEmail(d){
       </table>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:8px 0 24px">
-      <a href="https://certiprep.academy/academic/quote/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Accept & Pay →</a>
+      <a href="https://veritas.academy/academic/quote/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Accept & Pay →</a>
     </td></tr></table>
     <p style="margin:0;font-size:13px;color:#94a3b8;text-align:center">This quote is valid for 48 hours. Questions? Just reply to this email.</p>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
-    <p style="margin:0;font-size:12px;color:#94a3b8">CertiPrep Academic · <a href="https://certiprep.academy" style="color:#64748b">certiprep.academy</a></p>
+    <p style="margin:0;font-size:12px;color:#94a3b8">Veritas Academy · <a href="https://veritas.academy" style="color:#64748b">veritas.academy</a></p>
     <p style="margin:8px 0 0;font-size:11px;color:#cbd5e1">Order ${d.orderId} · You're receiving this because you submitted a prep request.</p>
   </td></tr>
 </table></td></tr></table></body></html>`;
@@ -66,7 +66,7 @@ function paymentEmail(d){
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px"><tr><td align="center">
 <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)">
   <tr><td style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:32px 40px;text-align:center">
-    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 CERTIPREP</span></div>
+    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 VERITAS ACADEMY</span></div>
     <div style="font-size:48px;margin:12px 0">✅</div>
     <h1 style="margin:0;font-size:26px;font-weight:700;color:#ffffff">Payment Confirmed!</h1>
   </td></tr>
@@ -96,11 +96,11 @@ function paymentEmail(d){
       </ol>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-      <a href="https://certiprep.academy/academic/dashboard/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Go to Dashboard →</a>
+      <a href="https://veritas.academy/academic/dashboard/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Go to Dashboard →</a>
     </td></tr></table>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
-    <p style="margin:0;font-size:12px;color:#94a3b8">CertiPrep Academic · <a href="https://certiprep.academy" style="color:#64748b">certiprep.academy</a></p>
+    <p style="margin:0;font-size:12px;color:#94a3b8">Veritas Academy · <a href="https://veritas.academy" style="color:#64748b">veritas.academy</a></p>
   </td></tr>
 </table></td></tr></table></body></html>`;
 }
@@ -111,7 +111,7 @@ function activatedEmail(d){
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px"><tr><td align="center">
 <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)">
   <tr><td style="background:linear-gradient(135deg,#065f46,#047857);padding:32px 40px;text-align:center">
-    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 CERTIPREP</span></div>
+    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 VERITAS ACADEMY</span></div>
     <div style="font-size:48px;margin:8px 0">🚀</div>
     <h1 style="margin:0;font-size:26px;font-weight:700;color:#ffffff">Your Prep Plan is Live!</h1>
     <p style="margin:12px 0 0;font-size:14px;color:#a7f3d0">${d.duration} days of focused preparation starts now.</p>
@@ -131,11 +131,11 @@ function activatedEmail(d){
       <div style="font-size:14px;color:#334155;line-height:1.6">Start with the Study Guide each day to build context, then reinforce with Flashcards and Quiz. Save the Mock Exam for Day ${d.duration}!</div>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-      <a href="https://certiprep.academy/academic/prep/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:#ffffff;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day 1 →</a>
+      <a href="https://veritas.academy/academic/prep/${d.orderId}" style="display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:#ffffff;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day 1 →</a>
     </td></tr></table>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
-    <p style="margin:0;font-size:12px;color:#94a3b8">CertiPrep Academic · <a href="https://certiprep.academy" style="color:#64748b">certiprep.academy</a></p>
+    <p style="margin:0;font-size:12px;color:#94a3b8">Veritas Academy · <a href="https://veritas.academy" style="color:#64748b">veritas.academy</a></p>
   </td></tr>
 </table></td></tr></table></body></html>`;
 }
@@ -148,7 +148,7 @@ function dailyEmail(d){
 <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)">
   <tr><td style="background:linear-gradient(135deg,#1e293b,#334155);padding:28px 40px">
     <table width="100%" cellpadding="0" cellspacing="0"><tr>
-      <td><span style="font-size:14px;font-weight:700;color:#ecc94b;letter-spacing:1px">🛡 CERTIPREP</span></td>
+      <td><span style="font-size:14px;font-weight:700;color:#ecc94b;letter-spacing:1px">🛡 VERITAS ACADEMY</span></td>
       <td style="text-align:right"><span style="font-size:12px;color:#94a3b8">Day ${d.dayNum} of ${d.duration}</span></td>
     </tr></table>
   </td></tr>
@@ -167,12 +167,12 @@ function dailyEmail(d){
       </table>
     </div>
     <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-      <a href="https://certiprep.academy/academic/prep/${d.orderId}/day/${d.dayNum}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day ${d.dayNum} →</a>
+      <a href="https://veritas.academy/academic/prep/${d.orderId}/day/${d.dayNum}" style="display:inline-block;background:linear-gradient(135deg,#ecc94b,#d69e2e);color:#0f172a;font-size:16px;font-weight:800;padding:16px 48px;border-radius:12px;text-decoration:none">Start Day ${d.dayNum} →</a>
     </td></tr></table>
     <p style="margin:16px 0 0;font-size:13px;color:#94a3b8;text-align:center">Consistency beats intensity. Even 30 minutes today makes a difference! 💪</p>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
-    <p style="margin:0;font-size:12px;color:#94a3b8">CertiPrep Academic · <a href="#" style="color:#64748b">Unsubscribe</a></p>
+    <p style="margin:0;font-size:12px;color:#94a3b8">Veritas Academy · <a href="#" style="color:#64748b">Unsubscribe</a></p>
   </td></tr>
 </table></td></tr></table></body></html>`;
 }
@@ -183,7 +183,7 @@ function examDayEmail(d){
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px"><tr><td align="center">
 <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06)">
   <tr><td style="background:linear-gradient(135deg,#7c3aed,#6d28d9);padding:40px;text-align:center">
-    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 CERTIPREP</span></div>
+    <div style="display:inline-block;background:#ecc94b;border-radius:10px;padding:8px 12px;margin-bottom:16px"><span style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:1px">🛡 VERITAS ACADEMY</span></div>
     <div style="font-size:56px;margin:8px 0">⭐</div>
     <h1 style="margin:0;font-size:28px;font-weight:800;color:#ffffff;line-height:1.3">Today's the Day!</h1>
     <p style="margin:12px 0 0;font-size:16px;color:#c4b5fd">You've prepared. You're ready. Go show them what you know.</p>
@@ -204,15 +204,15 @@ function examDayEmail(d){
     <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:20px 24px;margin-bottom:24px">
       <div style="font-size:14px;font-weight:700;color:#0369a1;margin-bottom:8px">📝 Last-Minute Review</div>
       <div style="font-size:14px;color:#334155;line-height:1.6">Your flashcard highlights are still available for a quick 15-minute refresh.</div>
-      <a href="https://certiprep.academy/academic/prep/${d.orderId}" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#0369a1;text-decoration:none">Open Quick Review →</a>
+      <a href="https://veritas.academy/academic/prep/${d.orderId}" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#0369a1;text-decoration:none">Open Quick Review →</a>
     </div>
     <div style="text-align:center;padding:16px 0">
       <p style="margin:0;font-size:20px;font-weight:800;color:#0f172a">You've got this, ${d.student}! 🌟</p>
-      <p style="margin:8px 0 0;font-size:14px;color:#64748b">The CertiPrep team is rooting for you.</p>
+      <p style="margin:8px 0 0;font-size:14px;color:#64748b">The Veritas Academy team is rooting for you.</p>
     </div>
   </td></tr>
   <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center">
-    <p style="margin:0;font-size:12px;color:#94a3b8">CertiPrep Academic · <a href="https://certiprep.academy" style="color:#64748b">certiprep.academy</a></p>
+    <p style="margin:0;font-size:12px;color:#94a3b8">Veritas Academy · <a href="https://veritas.academy" style="color:#64748b">veritas.academy</a></p>
     <p style="margin:8px 0 0;font-size:11px;color:#cbd5e1">After your exam, we'd love to hear how it went!</p>
   </td></tr>
 </table></td></tr></table></body></html>`;
@@ -244,7 +244,7 @@ export default function EmailTemplates(){
         <div style={{width:32,height:32,borderRadius:8,background:"linear-gradient(135deg,"+T.accent+","+T.accentHover+")",display:"flex",alignItems:"center",justifyContent:"center"}}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={T.dk?"#1a202c":"#fff"} strokeWidth="2.5" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <span style={{fontWeight:700,fontSize:15,letterSpacing:"1.5px",color:T.text}}>CERTIPREP</span>
+        <span style={{fontWeight:700,fontSize:15,letterSpacing:"1.5px",color:T.text}}>VERITAS ACADEMY</span>
         <span style={{fontSize:11,color:T.dim,fontWeight:500}}>EMAIL TEMPLATES</span>
         <div style={{marginLeft:"auto",display:"flex",alignItems:"center",gap:12}}>
           <span style={{fontSize:12,color:T.dim}}>5 templates · production-ready HTML</span>

@@ -1,5 +1,5 @@
 {
-  "name": "certiprep-academic",
+  "name": "veritas-academy",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "db:push": "npx prisma db push",
-    "db:studio": "npx prisma studio"
+    "db:studio": "npx prisma studio",
+    "db:seed": "node prisma/seed.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
