@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { checkPassword, createAdminToken } from '@/lib/auth';
+import { comparePassword, createAdminToken } from '@/lib/auth';
 import { cookies } from 'next/headers';
 
 export async function POST(req) {
   const { password } = await req.json();
 
-  if (!await checkPassword(password)) {
+  if (!await comparePassword(password, process.env.ADMIN_PASSWORD)) {
     return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
   }
 

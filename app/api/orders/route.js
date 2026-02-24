@@ -39,7 +39,16 @@ export async function POST(req) {
     const body = await req.json();
     const { studentName, studentEmail, school, courseCode, courseName, examType, examDate, commitment, topics, notes, files } = body;
 
-    const duration = Math.max(1, Math.ceil((new Date(examDate) - new Date()) / 86400000));
+    if (!studentName || !studentEmail || !courseName || !examType || !examDate) {
+      return NextResponse.json({ error: 'Missing required fields (studentName, studentEmail, courseName, examType, examDate)' }, { status: 400 });
+    }
+
+    const parsedExamDate = new Date(examDate);
+    if (isNaN(parsedExamDate.getTime()) || parsedExamDate < new Date()) {
+      return NextResponse.json({ error: 'Invalid or past examDate provided' }, { status: 400 });
+    }
+
+    const duration = Math.max(1, Math.ceil((parsedExamDate - new Date()) / 86400000));
 
     const order = await db.order.create({
       data: {
@@ -85,6 +94,10 @@ export async function PATCH(req) {
     const { id, action, ...data } = body;
 
     if (!id || !action) return NextResponse.json({ error: 'Missing id or action' }, { status: 400 });
+
+    if (!['quote', 'setPaymentLink', 'markPaid', 'activate', 'reject'].includes(action)) {
+      return NextResponse.json({ error: 'Invalid action provided' }, { status: 400 });
+    }
 
     const order = await db.order.findUnique({ where: { id } });
     if (!order) return NextResponse.json({ error: 'Order not found' }, { status: 404 });

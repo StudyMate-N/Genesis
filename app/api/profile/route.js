@@ -1,76 +1,64 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
-import { getSession } from '@/lib/auth';
+
+export const dynamic = 'force-dynamic';
+import { db } from '@/lib/db';
+import { getSession } from '@/lib/auth'; // Assuming an auth middleware or utility
 
 export async function GET() {
   try {
     const session = await getSession();
-    if (!session) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
+    if (!session || !session.user?.id) {
+      return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
-    const user = await prisma.user.findUnique({
-      where: { id: session.userId },
-      include: { profile: true },
+    const user = await db.user.findUnique({
+      where: { id: session.user.id },
+      include: { 
+        profile: true, 
+        enrolledCourses: { 
+          include: { course: true } 
+        }, 
+        quizAttempts: true 
+      },
     });
 
     if (!user) {
-      return NextResponse.json(
-        { success: false, error: 'User not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ message: 'User not found' }, { status: 404 });
     }
 
     const { password: _, ...userWithoutPassword } = user;
 
-    return NextResponse.json({
-      success: true,
-      data: userWithoutPassword,
-    });
+    return NextResponse.json({ profile: userWithoutPassword });
   } catch (error) {
-    console.error('Profile fetch error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    console.error("Error fetching user profile:", error);
+    return NextResponse.json({ message: "Error fetching user profile", error: error.message }, { status: 500 });
   }
 }
 
 export async function PUT(request) {
   try {
     const session = await getSession();
-    if (!session) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
+    if (!session || !session.user?.id) {
+      return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
-    const { firstName, lastName, school, bio, avatarUrl } = await request.json();
+    const { name, email } = await request.json();
 
-    const updatedProfile = await prisma.profile.update({
-      where: { userId: session.userId },
+    if (!name || !email) {
+      return NextResponse.json({ message: "Name and email are required for profile update." }, { status: 400 });
+    }
+
+    const updatedUser = await db.user.update({
+      where: { id: session.user.id },
       data: {
-        firstName,
-        lastName,
-        school,
-        bio,
-        avatarUrl,
+        name: name,
+        email: email,
       },
     });
 
-    return NextResponse.json({
-      success: true,
-      data: updatedProfile,
-    });
+    return NextResponse.json({ profile: updatedUser });
   } catch (error) {
-    console.error('Profile update error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Internal server error' },
-      { status: 500 }
-    );
+    console.error("Error updating user profile:", error);
+    return NextResponse.json({ message: "Error updating user profile", error: error.message }, { status: 500 });
   }
 }

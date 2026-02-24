@@ -30,7 +30,21 @@ export async function POST(request) {
     const { code, name, description } = body;
 
     if (!code || !name) {
-      return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json({ success: false, error: 'Course code and name are required' }, { status: 400 });
+    }
+
+    // Check if a course with the same code or name already exists
+    const existingCourse = await db.course.findFirst({
+      where: {
+        OR: [
+          { code: code },
+          { name: name }
+        ]
+      }
+    });
+
+    if (existingCourse) {
+      return NextResponse.json({ success: false, error: 'Course with this code or name already exists' }, { status: 409 });
     }
 
     const course = await db.course.create({

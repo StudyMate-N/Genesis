@@ -34,7 +34,15 @@ export async function POST(request) {
     const { courseId, title, content, type, order } = body;
 
     if (!courseId || !title || !content || !type) {
-      return NextResponse.json({ success: false, error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json({ success: false, error: 'Missing required fields (courseId, title, content, type)' }, { status: 400 });
+    }
+
+    const existingCourse = await db.course.findUnique({
+      where: { id: courseId },
+    });
+
+    if (!existingCourse) {
+      return NextResponse.json({ success: false, error: 'Course not found' }, { status: 404 });
     }
 
     const module = await db.module.create({
