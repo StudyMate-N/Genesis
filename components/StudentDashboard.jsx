@@ -15,6 +15,10 @@ import {
 } from "lucide-react";
 
 import ProfilePage from "../app/dashboard/profile/page";
+import MyCourses from './MyCourses';
+import StudyPlanViewer from './StudyPlanViewer';
+import QuizComponent from './QuizComponent';
+import FlashcardComponent from './FlashcardComponent';
 
 const COLORS = {
   navy: "#001F3F",
@@ -97,16 +101,14 @@ export default function StudentDashboard() {
         );
       case "Profile":
         return <ProfilePage />;
+            case "My Courses":
+        return <MyCourses />;
+      case "Study Plan":
+        return <StudyPlanViewer />;
+      case "Quizzes":
+        return <QuizComponent />;
       case "Flashcards":
-        return (
-          <div className="flex flex-col items-center justify-center h-[60vh] text-center">
-            <div className="w-20 h-20 bg-lightGray rounded-full flex items-center justify-center mb-4">
-              {navItems.find(n => n.name === activeTab)?.icon}
-            </div>
-            <h2 className="text-xl font-bold" style={{ color: COLORS.navy }}>{activeTab}</h2>
-            <p className="text-muted max-w-xs mt-2">This section is currently under development as part of Veritas Academy's personalized experience.</p>
-          </div>
-        );
+        return <FlashcardComponent />;
     }
   };
 

@@ -3,21 +3,17 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
-enum Role {
-  STUDENT
-  ADMIN
-  EDUCATOR
-}
+
 
 model User {
   id            String       @id @default(cuid())
   email         String       @unique
   password      String
-  role          Role         @default(STUDENT)
+  role          String         @default("STUDENT")
   profile       Profile?
   studyPlans    StudyPlan[]
   quizResults   QuizResult[]
@@ -35,7 +31,7 @@ model Profile {
   lastName    String?
   school      String?
   avatarUrl   String?
-  bio         String?  @db.Text
+  bio         String?
   updatedAt   DateTime @updatedAt
 }
 
@@ -43,7 +39,7 @@ model Course {
   id          String      @id @default(cuid())
   code        String      @unique
   name        String
-  description String?     @db.Text
+  description String?
   modules     Module[]
   studyPlans  StudyPlan[]
   createdAt   DateTime    @default(now())
@@ -57,7 +53,7 @@ model Module {
   courseId    String
   course      Course      @relation(fields: [courseId], references: [id], onDelete: Cascade)
   title       String
-  content     String      @db.Text
+  content     String
   type        String      // e.g., "flashcard", "quiz", "study_guide"
   order       Int
   studyPlans  StudyPlan[] @relation("StudyPlanModules")
@@ -94,7 +90,7 @@ model QuizResult {
   module    Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   score     Float
   total     Int
-  answers   String   @db.Text // JSON string of answers
+  answers   String // JSON string of answers
   createdAt DateTime @default(now())
 
   @@index([userId])
@@ -113,13 +109,13 @@ model Order {
   examDate     DateTime
   duration     Int
   commitment   String
-  topics       String    @db.Text
-  notes        String?   @db.Text
-  files        String    @default("[]") @db.Text
+  topics       String
+  notes        String?
+  files        String    @default("[]")
   status       String    @default("pending")
   quoteAmount  Float?
-  quoteModules String?   @db.Text
-  quoteNote    String?   @db.Text
+  quoteModules String?
+  quoteNote    String?
   quoteSentAt  DateTime?
   paymentLink  String?
   paidAt       DateTime?
