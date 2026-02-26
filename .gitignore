@@ -108,3 +108,9 @@ temp/
 
 # Webdev artifacts (checkpoint zips, migrations, etc.)
 .webdev/
+
+# Vercel
+.vercel/
+
+# Manus debug logs
+.manus-logs/

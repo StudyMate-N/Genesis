@@ -81,6 +81,7 @@
 - [x] All dashboard tabs render real components
 - [x] All API routes exist and work
 - [x] Navigation links to actual pages
-- [ ] Push to GitHub feature/phase1-mvp branch
-- [ ] Merge into main
-- [ ] Save phase1_summary.md
+- [x] Push to GitHub feature/phase1-mvp branch
+- [x] Merge into main
+- [x] Save phase1_summary.md
+- [x] Configure Vercel deployment (vercel.json, api/index.ts serverless adapter)
